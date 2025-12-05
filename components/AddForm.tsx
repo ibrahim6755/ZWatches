@@ -78,7 +78,7 @@ const AddForm = () => {
         />
       </div>
       <div className="flex flex-col w-full">
-        <label>Seller's Link:</label>
+        <label>Seller Link:</label>
         <input
           type="text"
           name="link"

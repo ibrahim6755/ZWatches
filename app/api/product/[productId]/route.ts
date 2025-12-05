@@ -16,7 +16,7 @@ export async function GET(
     }
 
     return Response.json({ product }, { status: 200 });
-  } catch (error: any) {
-    return Response.json({ messgae: error.message }, { status: 400 });
+  } catch {
+    return Response.json({ messgae: "Something went wrong" }, { status: 400 });
   }
 }
