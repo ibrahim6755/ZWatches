@@ -31,6 +31,12 @@ const ProductPage = () => {
   if (!product) {
     return <p>Loading...</p>;
   }
+
+  const handleDelete = async () => {
+    await axios.delete(`/api/product/${params.productId}`);
+
+    router.push("/");
+  };
   return (
     <div className="px-4 md:px-12 bg-custom-light-grey">
       <p className="cursor-pointer py-3" onClick={() => router.back()}>
@@ -59,7 +65,12 @@ const ProductPage = () => {
                   <Link href={`/product/${product._id}/update`}>
                     <p className="mb-2 pb-2 border-b border-gray-300">Update</p>
                   </Link>
-                  <p className="text-red-500 cursor-pointer">Delete</p>
+                  <p
+                    className="text-red-500 cursor-pointer"
+                    onClick={handleDelete}
+                  >
+                    Delete
+                  </p>
                 </div>
               )}
             </div>
